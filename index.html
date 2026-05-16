@@ -5,26 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>隐私政策 - 康复游戏</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; line-height: 1.8; color: #333; }
-        h1 { color: #68CAA3; }
-        h2 { margin-top: 32px; color: #555; }
-        a { color: #68CAA3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; line-height: 1.85; color: #333; background: #fff; }
+        h1 { font-size: 26px; font-weight: 700; color: #68CAA3; margin-bottom: 6px; }
+        .subtitle { font-size: 13px; color: #999; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+        h2 { font-size: 16px; font-weight: 600; color: #444; margin-top: 36px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        h2::before { content: ""; width: 4px; height: 18px; background: #68CAA3; border-radius: 2px; flex-shrink: 0; }
+        p { font-size: 14.5px; color: #555; margin-bottom: 10px; }
+        ul { padding-left: 20px; margin-bottom: 10px; }
+        li { font-size: 14.5px; color: #555; margin-bottom: 6px; }
+        .developer-info { background: #F7FBF9; border: 1px solid #D4EEE3; border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+        .developer-info p { margin-bottom: 6px; font-size: 14px; }
+        .developer-info p:last-child { margin-bottom: 0; }
+        .developer-info strong { color: #444; }
+        .contact-link { color: #68CAA3; text-decoration: none; font-weight: 500; }
+        .contact-link:hover { text-decoration: underline; }
+        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; font-size: 12px; color: #bbb; text-align: center; }
+        .highlight { background: #FFF9E6; border-left: 3px solid #FFD700; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; color: #666; }
     </style>
 </head>
 <body>
     <h1>隐私政策</h1>
-    <p>生效日期：2026年5月12日</p >
+    <p class="subtitle">康复游戏 · 生效日期：2026年5月12日</p>
 
-    <h2>数据收集</h2>
-    <p>本应用会在您主动使用时，收集您输入或选择的游戏进度、评估信息及聊天内容，用于 AI 回复生成。所有数据均在您的设备本地处理后，仅在您主动触发 AI 功能时发送至 DeepSeek API 服务器。</p >
+    <p>浙江大学软件学院郑修琦（以下简称"开发者"）郑重承诺保护您的个人隐私。本隐私政策说明了康复游戏应用（以下简称"本应用"）如何收集、使用和保护您的信息。</p>
 
-    <h2>数据使用</h2>
-    <p>DeepSeek API 仅接收与您请求相关的数据片段，用于生成针对性的康复辅助建议。数据不会用于训练 AI 模型，不会与第三方共享。</p >
+    <div class="developer-info">
+        <p><strong>开发者：</strong>郑修琦（浙江大学软件学院）</p>
+        <p><strong>联系邮箱：</strong><a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></p>
+    </div>
 
-    <h2>数据存储</h2>
-    <p>您的游戏数据存储在本地设备。AI 对话内容不持久化存储，App 关闭后即清除。</p >
+    <h2>一、数据收集</h2>
+    <p>本应用仅在您主动使用时收集以下信息：</p>
+    <ul>
+        <li><strong>游戏进度数据：</strong>体力值、心情指数、康复进度等游戏状态信息，存储于您的设备本地。</li>
+        <li><strong>评估信息：</strong>您在首次使用或后续调整时填写的年龄、损伤程度、康复周期等评估资料，仅存储于本设备。</li>
+        <li><strong>聊天内容：</strong>当您主动使用 AI 辅助功能时，您输入的相关信息将被发送至 DeepSeek API 服务器以生成回复。</li>
+    </ul>
+    <p>本应用<strong>不收集</strong>任何与上述无关的个人信息，包括但不限于：位置信息、设备标识符、通讯录、照片等。</p>
 
-    <h2>联系我们</h2>
-    <p>如有任何问题，请通过应用内反馈渠道与我们联系。</p >
+    <h2>二、数据使用</h2>
+    <p>DeepSeek API（由深度求索（杭州）科技有限公司提供）仅接收与您请求直接相关的数据片段，用于生成针对性的康复辅助建议。我们特别声明：</p>
+    <ul>
+        <li>您的数据不会用于训练 AI 模型。</li>
+        <li>您的数据不会与 DeepSeek 以外的任何第三方共享。</li>
+        <li>DeepSeek 承诺按照其隐私政策处理用户数据，详情请参阅 <a class="contact-link" href="https://www.deepseek.com/privacy" target="_blank">DeepSeek 隐私政策</a>。</li>
+    </ul>
+
+    <h2>三、数据存储</h2>
+    <p>您的游戏数据（包括进度、评估信息）完全存储在您本人持有的设备上，开发者无权访问。AI 对话内容不进行持久化存储，当前会话结束后即清除。</p>
+
+    <h2>四、第三方服务</h2>
+    <p>本应用集成了以下第三方服务：</p>
+    <ul>
+        <li><strong>DeepSeek API：</strong>用于 AI 辅助功能的对话生成。数据仅在您主动触发时发送，遵循 DeepSeek 服务条款与隐私政策。</li>
+    </ul>
+
+    <h2>五、您的权利</h2>
+    <p>您享有以下权利：</p>
+    <ul>
+        <li>随时删除本应用，所有本地存储数据将随应用一同清除。</li>
+        <li>撤回 AI 功能授权，方法：在应用内关闭 AI 功能或删除应用。</li>
+        <li>就任何隐私问题联系开发者：<a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></li>
+    </ul>
+
+    <h2>六、适用法律</h2>
+    <p>本隐私政策依据《中华人民共和国个人信息保护法》《中华人民共和国数据安全法》等相关法律法规制定。</p>
+
+    <h2>七、政策更新</h2>
+    <p>如本隐私政策发生重大变更，开发者将通过应用内公告或更新隐私政策页面通知您。建议您定期查阅本页以获取最新信息。</p>
+
+    <h2>八、联系我们</h2>
+    <p>如您对本隐私政策有任何疑问、意见或投诉，请通过以下方式与我们联系：</p>
+    <p>📧 <a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></p>
+    <p>我们将在法律规定的时限内认真处理您的请求。</p>
+
+    <div class="footer">康复游戏 · 浙江大学软件学院 · 2026</div>
 </body>
 </html>
