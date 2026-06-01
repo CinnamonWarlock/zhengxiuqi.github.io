@@ -3,83 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 - 康复游戏</title>
+    <title>康复游戏</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; line-height: 1.85; color: #333; background: #fff; }
-        h1 { font-size: 26px; font-weight: 700; color: #68CAA3; margin-bottom: 6px; }
-        .subtitle { font-size: 13px; color: #999; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
-        h2 { font-size: 16px; font-weight: 600; color: #444; margin-top: 36px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        h2::before { content: ""; width: 4px; height: 18px; background: #68CAA3; border-radius: 2px; flex-shrink: 0; }
-        p { font-size: 14.5px; color: #555; margin-bottom: 10px; }
-        ul { padding-left: 20px; margin-bottom: 10px; }
-        li { font-size: 14.5px; color: #555; margin-bottom: 6px; }
-        .developer-info { background: #F7FBF9; border: 1px solid #D4EEE3; border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
-        .developer-info p { margin-bottom: 6px; font-size: 14px; }
-        .developer-info p:last-child { margin-bottom: 0; }
-        .developer-info strong { color: #444; }
-        .contact-link { color: #68CAA3; text-decoration: none; font-weight: 500; }
-        .contact-link:hover { text-decoration: underline; }
-        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; font-size: 12px; color: #bbb; text-align: center; }
-        .highlight { background: #FFF9E6; border-left: 3px solid #FFD700; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; color: #666; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #fff; color: #333; }
+
+        /* Header */
+        header { background: #fff; border-bottom: 1px solid #eee; padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+        header .inner { max-width: 960px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #333; text-decoration: none; }
+        .logo img { height: 36px; width: 36px; border-radius: 8px; }
+        nav { display: flex; gap: 28px; }
+        nav a { color: #666; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: #68CAA3; }
+        nav a.active { color: #68CAA3; }
+
+        /* Hero */
+        .hero { background: linear-gradient(160deg, #F7FBF9 0%, #fff 60%); padding: 80px 24px 72px; text-align: center; }
+        .hero .tag { display: inline-block; background: #E8F7F0; color: #68CAA3; font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 100px; margin-bottom: 20px; }
+        .hero h1 { font-size: 42px; font-weight: 800; color: #222; line-height: 1.2; margin-bottom: 16px; }
+        .hero p { font-size: 17px; color: #666; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .badge { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 10px 18px; font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; }
+        .badge strong { color: #333; }
+
+        /* App Preview */
+        .preview { padding: 60px 24px; text-align: center; }
+        .preview h2 { font-size: 28px; font-weight: 700; color: #222; margin-bottom: 8px; }
+        .preview .sub { font-size: 15px; color: #888; margin-bottom: 40px; }
+        .preview-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+        .preview-phone { background: #f5f5f5; border-radius: 36px; padding: 12px; display: inline-block; }
+        .preview-phone img { width: 240px; border-radius: 28px; display: block; }
+
+        /* Features */
+        .features { background: #FAFAFA; padding: 72px 24px; }
+        .features h2 { text-align: center; font-size: 28px; font-weight: 700; color: #222; margin-bottom: 44px; }
+        .features-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .feature-card { background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 28px; }
+        .feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+        .feature-card h3 { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 8px; }
+        .feature-card p { font-size: 13.5px; color: #777; line-height: 1.65; }
+
+        /* About */
+        .about { padding: 72px 24px; max-width: 720px; margin: 0 auto; }
+        .about h2 { font-size: 28px; font-weight: 700; color: #222; margin-bottom: 20px; text-align: center; }
+        .about p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+        .about .disclaimer { background: #FFF3F0; border-left: 4px solid #FF7043; border-radius: 0 12px 12px 0; padding: 16px 20px; margin-top: 24px; font-size: 13.5px; color: #666; line-height: 1.7; }
+        .about .disclaimer strong { color: #FF7043; }
+
+        /* Links */
+        .links { background: #F7FBF9; padding: 48px 24px; border-top: 1px solid #E8F0EB; }
+        .links-inner { max-width: 720px; margin: 0 auto; display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+        .link-group h4 { font-size: 13px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .link-group a { display: block; color: #555; text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+        .link-group a:hover { color: #68CAA3; }
+
+        /* Footer */
+        footer { background: #fff; border-top: 1px solid #eee; padding: 28px 24px; text-align: center; font-size: 12px; color: #bbb; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 30px; }
+            nav { gap: 16px; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <h1>隐私政策</h1>
-    <p class="subtitle">康复游戏 · 生效日期：2026年5月12日</p>
 
-    <p>浙江大学软件学院郑修琦（以下简称"开发者"）郑重承诺保护您的个人隐私。本隐私政策说明了康复游戏应用（以下简称"本应用"）如何收集、使用和保护您的信息。</p>
+    <header>
+        <div class="inner">
+            <a href="/" class="logo">
+                <img src="https://raw.githubusercontent.com/cinnamonwarlock/zhengxiuqi.github.io/main/favicon.png" alt="康复游戏" onerror="this.style.display='none'">
+                康复游戏
+            </a>
+            <nav>
+                <a href="#features">功能</a>
+                <a href="#about">关于</a>
+                <a href="privacy.html">隐私政策</a>
+                <a href="terms.html">用户协议</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="developer-info">
-        <p><strong>开发者：</strong>郑修琦（浙江大学软件学院）</p>
-        <p><strong>联系邮箱：</strong><a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></p>
-    </div>
+    <section class="hero">
+        <span class="tag">失语症康复辅助</span>
+        <h1>在游戏中找回<br>表达的力量</h1>
+        <p>康复游戏是一款专为失语症患者设计的语言康复辅助应用，通过日常场景模拟与 AI 辅助对话，帮助患者在轻松的氛围中逐步恢复语言能力。</p>
+        <div class="hero-badges">
+            <div class="badge"><strong>AI 辅助</strong> 智能对话练习</div>
+            <div class="badge"><strong>场景训练</strong> 24 周科学计划</div>
+            <div class="badge"><strong>本地存储</strong> 数据仅保存在设备</div>
+        </div>
+    </section>
 
-    <h2>一、数据收集</h2>
-    <p>本应用仅在您主动使用时收集以下信息：</p>
-    <ul>
-        <li><strong>游戏进度数据：</strong>体力值、心情指数、康复进度等游戏状态信息，存储于您的设备本地。</li>
-        <li><strong>评估信息：</strong>您在首次使用或后续调整时填写的年龄、损伤程度、康复周期等评估资料，仅存储于本设备。</li>
-        <li><strong>聊天内容：</strong>当您主动使用 AI 辅助功能时，您输入的相关信息将被发送至 DeepSeek API 服务器以生成回复。</li>
-    </ul>
-    <p>本应用<strong>不收集</strong>任何与上述无关的个人信息，包括但不限于：位置信息、设备标识符、通讯录、照片等。</p>
+    <section class="preview">
+        <h2>应用预览</h2>
+        <p class="sub">界面简洁，操作直观</p>
+        <div class="preview-grid">
+            <div class="preview-phone">
+                <img src="https://raw.githubusercontent.com/cinnamonwarlock/zhengxiuqi.github.io/main/preview.png" alt="应用截图" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
 
-    <h2>二、数据使用</h2>
-    <p>DeepSeek API（由深度求索（杭州）科技有限公司提供）仅接收与您请求直接相关的数据片段，用于生成针对性的康复辅助建议。我们特别声明：</p>
-    <ul>
-        <li>您的数据不会用于训练 AI 模型。</li>
-        <li>您的数据不会与 DeepSeek 以外的任何第三方共享。</li>
-        <li>DeepSeek 承诺按照其隐私政策处理用户数据，详情请参阅 <a class="contact-link" href="https://www.deepseek.com/privacy" target="_blank">DeepSeek 隐私政策</a>。</li>
-    </ul>
+    <section class="features" id="features">
+        <h2>核心功能</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #E8F7F0;">&#127808;</div>
+                <h3>AI 智能对话</h3>
+                <p>内置 AI 辅助对话功能，可根据您的评估结果和康复进度，生成个性化的语言练习场景，让康复训练更贴近真实生活。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #FFF3E0;">&#128198;</div>
+                <h3>24 周训练计划</h3>
+                <p>科学规划 24 周康复训练周期，涵盖日常起居、运动、感官等多个生活场景，逐步提升语言表达能力。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #E3F2FD;">&#128273;</div>
+                <h3>本地数据存储</h3>
+                <p>您的游戏进度、评估数据和康复记录仅保存在本人设备上，开发者无法访问，充分保护您的隐私。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #F3E5F5;">&#128266;</div>
+                <h3>语音输入支持</h3>
+                <p>支持语音输入功能，方便语言表达有困难的用户通过语音与 AI 进行对话练习。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #FBE9E7;">&#9878;</div>
+                <h3>每日打卡</h3>
+                <p>记录每日训练情况，培养康复习惯。可视化数据展示让您清晰看到康复进展与变化。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: #E0F2F1;">&#128218;</div>
+                <h3>知识中心</h3>
+                <p>提供失语症相关知识、康复训练方法、家庭照护指南等丰富的学习资源，帮助患者与家属全面了解失语症。</p>
+            </div>
+        </div>
+    </section>
 
-    <h2>三、数据存储</h2>
-    <p>您的游戏数据（包括进度、评估信息）完全存储在您本人持有的设备上，开发者无权访问。AI 对话内容不进行持久化存储，当前会话结束后即清除。</p>
+    <section class="about" id="about">
+        <h2>关于康复游戏</h2>
+        <p>康复游戏由浙江大学软件学院郑修琦开发，是一款面向失语症患者的康复辅助应用。失语症是一种由脑损伤引起的语言障碍，可能影响患者的表达、理解、阅读和书写能力。</p>
+        <p>本应用旨在通过游戏化的方式，将枯燥的康复训练变得更有趣、更易于坚持。通过模拟日常生活场景（如超市购物、问路、点餐等），帮助患者在实际应用中锻炼语言能力。</p>
+        <p>本应用内置 AI 辅助对话功能，由 DeepSeek API 提供支持。AI 会根据您选择的角色和当前康复阶段，生成贴近真实生活的对话场景。</p>
+        <div class="disclaimer">
+            <strong>重要提示：</strong>康复游戏是一款辅助工具，不构成任何医疗建议、诊断或治疗。使用本应用不能替代专业医疗人士的诊疗意见。如有健康问题，请及时咨询专业医生。
+        </div>
+    </section>
 
-    <h2>四、第三方服务</h2>
-    <p>本应用集成了以下第三方服务：</p>
-    <ul>
-        <li><strong>DeepSeek API：</strong>用于 AI 辅助功能的对话生成。数据仅在您主动触发时发送，遵循 DeepSeek 服务条款与隐私政策。</li>
-    </ul>
+    <section class="links">
+        <div class="links-inner">
+            <div class="link-group">
+                <h4>法律信息</h4>
+                <a href="privacy.html">隐私政策</a>
+                <a href="terms.html">用户协议</a>
+            </div>
+            <div class="link-group">
+                <h4>联系方式</h4>
+                <a href="mailto:2715526731@qq.com">2715526731@qq.com</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>五、您的权利</h2>
-    <p>您享有以下权利：</p>
-    <ul>
-        <li>随时删除本应用，所有本地存储数据将随应用一同清除。</li>
-        <li>撤回 AI 功能授权，方法：在应用内关闭 AI 功能或删除应用。</li>
-        <li>就任何隐私问题联系开发者：<a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></li>
-    </ul>
+    <footer>
+        <p>康复游戏 &middot; 浙江大学软件学院 &middot; 2026</p>
+    </footer>
 
-    <h2>六、适用法律</h2>
-    <p>本隐私政策依据《中华人民共和国个人信息保护法》《中华人民共和国数据安全法》等相关法律法规制定。</p>
-
-    <h2>七、政策更新</h2>
-    <p>如本隐私政策发生重大变更，开发者将通过应用内公告或更新隐私政策页面通知您。建议您定期查阅本页以获取最新信息。</p>
-
-    <h2>八、联系我们</h2>
-    <p>如您对本隐私政策有任何疑问、意见或投诉，请通过以下方式与我们联系：</p>
-    <p>📧 <a class="contact-link" href="mailto:2715526731@qq.com">2715526731@qq.com</a></p>
-    <p>我们将在法律规定的时限内认真处理您的请求。</p>
-
-    <div class="footer">康复游戏 · 浙江大学软件学院 · 2026</div>
 </body>
 </html>
