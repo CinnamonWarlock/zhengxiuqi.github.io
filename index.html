@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>康复游戏</title>
+    <title>Sprout - 慢病康复模拟平台</title>
+    <meta name="description" content="Sprout 慢病康复模拟平台 - 专为失语症患者设计的语言康复辅助应用">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -13,28 +14,20 @@
         header { background: #fff; border-bottom: 1px solid #eee; padding: 0 24px; position: sticky; top: 0; z-index: 100; }
         header .inner { max-width: 960px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #333; text-decoration: none; }
-        .logo img { height: 36px; width: 36px; border-radius: 8px; }
+        .logo-img { height: 36px; width: 36px; border-radius: 8px; object-fit: contain; }
         nav { display: flex; gap: 28px; }
         nav a { color: #666; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
         nav a:hover { color: #68CAA3; }
-        nav a.active { color: #68CAA3; }
 
         /* Hero */
         .hero { background: linear-gradient(160deg, #F7FBF9 0%, #fff 60%); padding: 80px 24px 72px; text-align: center; }
         .hero .tag { display: inline-block; background: #E8F7F0; color: #68CAA3; font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 100px; margin-bottom: 20px; }
-        .hero h1 { font-size: 42px; font-weight: 800; color: #222; line-height: 1.2; margin-bottom: 16px; }
+        .hero h1 { font-size: 42px; font-weight: 800; color: #222; line-height: 1.2; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 16px; color: #888; margin-bottom: 20px; font-weight: 500; }
         .hero p { font-size: 17px; color: #666; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
         .hero-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .badge { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 10px 18px; font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; }
         .badge strong { color: #333; }
-
-        /* App Preview */
-        .preview { padding: 60px 24px; text-align: center; }
-        .preview h2 { font-size: 28px; font-weight: 700; color: #222; margin-bottom: 8px; }
-        .preview .sub { font-size: 15px; color: #888; margin-bottom: 40px; }
-        .preview-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
-        .preview-phone { background: #f5f5f5; border-radius: 36px; padding: 12px; display: inline-block; }
-        .preview-phone img { width: 240px; border-radius: 28px; display: block; }
 
         /* Features */
         .features { background: #FAFAFA; padding: 72px 24px; }
@@ -74,8 +67,8 @@
     <header>
         <div class="inner">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/cinnamonwarlock/zhengxiuqi.github.io/main/favicon.png" alt="康复游戏" onerror="this.style.display='none'">
-                康复游戏
+                <img src="favicon.png" alt="Sprout" class="logo-img">
+                Sprout
             </a>
             <nav>
                 <a href="#features">功能</a>
@@ -87,23 +80,14 @@
     </header>
 
     <section class="hero">
-        <span class="tag">失语症康复辅助</span>
-        <h1>在游戏中找回<br>表达的力量</h1>
-        <p>康复游戏是一款专为失语症患者设计的语言康复辅助应用，通过日常场景模拟与 AI 辅助对话，帮助患者在轻松的氛围中逐步恢复语言能力。</p>
+        <span class="tag">慢病康复模拟平台</span>
+        <h1>Sprout</h1>
+        <p class="subtitle">在游戏中找回表达的力量</p>
+        <p>Sprout 是一款专为失语症患者设计的语言康复辅助应用，通过日常场景模拟与 AI 辅助对话，帮助患者在轻松的氛围中逐步恢复语言能力。</p>
         <div class="hero-badges">
             <div class="badge"><strong>AI 辅助</strong> 智能对话练习</div>
             <div class="badge"><strong>场景训练</strong> 24 周科学计划</div>
             <div class="badge"><strong>本地存储</strong> 数据仅保存在设备</div>
-        </div>
-    </section>
-
-    <section class="preview">
-        <h2>应用预览</h2>
-        <p class="sub">界面简洁，操作直观</p>
-        <div class="preview-grid">
-            <div class="preview-phone">
-                <img src="https://raw.githubusercontent.com/cinnamonwarlock/zhengxiuqi.github.io/main/preview.png" alt="应用截图" onerror="this.style.display='none'">
-            </div>
         </div>
     </section>
 
@@ -144,12 +128,12 @@
     </section>
 
     <section class="about" id="about">
-        <h2>关于康复游戏</h2>
-        <p>康复游戏由浙江大学软件学院郑修琦开发，是一款面向失语症患者的康复辅助应用。失语症是一种由脑损伤引起的语言障碍，可能影响患者的表达、理解、阅读和书写能力。</p>
+        <h2>关于 Sprout</h2>
+        <p>Sprout 由浙江大学软件学院郑修琦开发，是一款面向失语症患者的康复辅助应用。失语症是一种由脑损伤引起的语言障碍，可能影响患者的表达、理解、阅读和书写能力。</p>
         <p>本应用旨在通过游戏化的方式，将枯燥的康复训练变得更有趣、更易于坚持。通过模拟日常生活场景（如超市购物、问路、点餐等），帮助患者在实际应用中锻炼语言能力。</p>
         <p>本应用内置 AI 辅助对话功能，由 DeepSeek API 提供支持。AI 会根据您选择的角色和当前康复阶段，生成贴近真实生活的对话场景。</p>
         <div class="disclaimer">
-            <strong>重要提示：</strong>康复游戏是一款辅助工具，不构成任何医疗建议、诊断或治疗。使用本应用不能替代专业医疗人士的诊疗意见。如有健康问题，请及时咨询专业医生。
+            <strong>重要提示：</strong>Sprout 是一款辅助工具，不构成任何医疗建议、诊断或治疗。使用本应用不能替代专业医疗人士的诊疗意见。如有健康问题，请及时咨询专业医生。
         </div>
     </section>
 
@@ -168,7 +152,7 @@
     </section>
 
     <footer>
-        <p>康复游戏 &middot; 浙江大学软件学院 &middot; 2026</p>
+        <p>Sprout &middot; 慢病康复模拟平台 &middot; 浙江大学软件学院 &middot; 2026</p>
     </footer>
 
 </body>
